@@ -1,0 +1,1 @@
+Simple Ember application using dynamic segments

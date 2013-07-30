@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ember List Markers Starter Kit</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<script type="text/x-handlebars" data-template-name="application">
+<div>Application title: {{title}}</div>
+<div>info: {{info}}</div>
+<div>appName: {{appName}}</div>
+
+<h3>Hello, {{firstName}}</h3>
+{{outlet}}
+
+{{#linkTo 'index'}}Index{{/linkTo}}
+{{#linkTo 'markers'}}Markers{{/linkTo}}
+</script>
+
+<script type="text/x-handlebars" data-template-name="index">
+<h3>appName: {{appName}}</h3>
+<div>info: 
+{{info}}
+
+</div>
+</script>
+
+<script type="text/x-handlebars" data-template-name="markers">
+<h4>title: {{title}}</h4>
+<ul>
+{{#each marker in controller}}
+<li>{{#linkTo 'marker' marker }}{{marker.Name}}{{/linkTo}}</li>
+{{/each}}
+</ul>
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="marker">
+<ul>
+<h4>{{Name}},{{Region}}</h4>
+</ul>
+</script>
+
+  <script src="js/libs/jquery-1.9.1.js"></script>
+  <script src="js/libs/handlebars-1.0.0-rc.4.js"></script>
+  <script src="js/libs/ember-1.0.0-rc.6.js"></script>
+  <script src="js/libs/ember-data.js"></script>
+  
+  <script src="js/application.js"></script>
+  <script src="js/router.js"></script>
+  
+  <script src="js/models/store.js"></script>
+  <script src="js/models/marker.js"></script>
+  
+  <script src="js/controllers/markers_controller.js"></script>
+
+</body>
+</html>
